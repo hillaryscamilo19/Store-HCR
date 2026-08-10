@@ -1,0 +1,105 @@
+<section
+  class="relative min-h-[650px] overflow-hidden bg-gradient-to-br from-[#c9dff3] via-[#d9d2e9] to-[#f1a9bc]"
+>
+  <!-- Decoraciones -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Línea curva izquierda -->
+    <div
+      class="absolute -left-20 top-20 h-[500px] w-[500px] rounded-full border border-white/80"
+    ></div>
+
+    <!-- Línea curva central -->
+    <div
+      class="absolute left-[35%] top-20 h-[300px] w-[400px] rounded-[50%] border border-white/80"
+    ></div>
+
+    <!-- Línea curva inferior -->
+    <div
+      class="absolute left-[20%] bottom-[-200px] h-[400px] w-[600px] rounded-full border border-white/70"
+    ></div>
+  </div>
+
+  <!-- Contenedor principal -->
+  <div class="relative z-10 mx-auto flex min-h-[650px] max-w-[1400px] items-center px-8 lg:px-16">
+    <!-- CONTENIDO -->
+    <div class="z-20 w-full lg:w-1/2">
+      <p class="mb-5 text-sm font-medium tracking-[0.35em] text-white">OUTFIT OF THE DAY</p>
+
+      <h1 class="max-w-xl text-5xl font-light leading-tight text-[#3f4145] md:text-6xl">
+        ALL YOUR
+
+        <span class="block font-extrabold"> STYLES ARE HERE </span>
+      </h1>
+
+      <p class="mt-6 max-w-md text-sm leading-6 text-[#62646b]">
+        Consectetur adipiscing elit. Cursus condimentum donec non dictum. Id et sed ac mauris,
+        adipiscing tincidunt amet vel at. Quis lobortis id, consectetur adipiscing elit.
+      </p>
+
+      <!-- BOTÓN -->
+      <button
+        class="group mt-8 flex items-center gap-4 rounded-full bg-white px-8 py-3 text-sm font-semibold text-[#65b8d0] shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+      >
+        BUY NOW
+
+        <span class="text-lg transition-transform duration-300 group-hover:translate-x-1"> → </span>
+      </button>
+
+      <!-- REDES -->
+      <div class="mt-20 flex items-center gap-6">
+        <button
+          class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white"
+        >
+          ◎
+        </button>
+
+        <button
+          class="flex h-9 w-9 items-center justify-center rounded-full border border-white text-white"
+        >
+          f
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCTO -->
+    <div class="absolute right-[7%] top-[5%] z-100 w-[32%] max-w-[500px]">
+      <img
+        [src]="slides[currentSlide()].image"
+        [alt]="slides[currentSlide()].name"
+        class="h-auto w-100 object-contain drop-shadow-2xl transition-all duration-500"
+      />
+    </div>
+
+    <!-- FLECHAS -->
+    <div class="absolute right-6 top-1/2 z-40 flex -translate-y-1/2 items-center gap-1">
+      <button
+        type="button"
+        (click)="previousSlide()"
+        class="text-7xl font-thin text-white/50 transition hover:text-white"
+      >
+        ‹
+      </button>
+
+      <button
+        type="button"
+        (click)="nextSlide()"
+        class="text-7xl font-thin text-white/50 transition hover:text-white"
+      >
+        ›
+      </button>
+    </div>
+
+    <!-- INDICADORES -->
+    <div class="absolute bottom-20 right-[12%] z-30 flex items-center gap-3">
+      <span class="h-4 w-4 rounded-full border-2 border-white bg-[#69bfd7]"></span>
+
+      <div class="h-[2px] w-40 border-t-2 border-dotted border-white"></div>
+
+      <span class="h-2 w-2 rounded-full bg-black"></span>
+
+      <div class="h-[2px] w-20 border-t-2 border-dotted border-white"></div>
+
+      <span class="h-2 w-2 rounded-full border border-white"></span>
+    </div>
+  </div>
+</section>

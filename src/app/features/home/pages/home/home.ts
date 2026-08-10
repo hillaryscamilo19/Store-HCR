@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { Hero } from './components/hero/hero';
 
 @Component({
-  standalone: true,
   selector: 'app-home',
-  imports: [Hero],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
