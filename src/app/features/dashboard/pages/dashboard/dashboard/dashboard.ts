@@ -1,9 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { Navbar } from "../../../../layout/navbar/navbar/navbar";
-import { Footer } from "../../../../layout/footer/footer/footer";
-import { RouterOutlet } from "@angular/router";
-import { Dashboard } from "../../../dashboard/pages/dashboard/dashboard/dashboard";
-
 
 export interface Slide {
   image: string;
@@ -11,14 +6,14 @@ export interface Slide {
   price: number;
   oldPrice: number;
 }
-@Component({
-  selector: 'app-home',
-  imports: [Navbar, Footer, RouterOutlet, Dashboard],
-  templateUrl: './home.html',
-  styleUrl: './home.css',
-})
-export class Home {
 
+@Component({
+  selector: 'app-dashboard',
+  imports: [],
+  templateUrl: './dashboard.html',
+  styleUrl: './dashboard.css',
+})
+export class Dashboard {
   slides: Slide[] = [
     {
       image: '../assets/images/dress1.png',
@@ -59,7 +54,6 @@ export class Home {
   goToSlide(index: number): void {
     this.currentSlide.set(index);
   }
-
 
 
 }

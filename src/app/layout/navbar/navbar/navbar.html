@@ -42,9 +42,7 @@
         </button>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div class="flex shrink-0 items-center">
-        
-        </div>
+        <div class="flex shrink-0 items-center"></div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
@@ -99,6 +97,25 @@
         </button>
 
         <!-- Profile dropdown -->
+        <button
+          type="button"
+          (click)="profileMenuOpen = !profileMenuOpen"
+          aria-label="Open user menu"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+            alt=""
+            class="size-8 rounded-full"
+          />
+        </button>
+
+        @if (profileMenuOpen) {
+          <div class="absolute right-0 z-10 w-48 rounded-md bg-white py-1 shadow-lg">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700"> Your profile </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700"> Settings </a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700"> Sign out </a>
+          </div>
+        }
       </div>
     </div>
   </div>

@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Navbar {
 
+// navbar.component.ts
+// ...existing code...
+
+profileMenuOpen = false;
 }
