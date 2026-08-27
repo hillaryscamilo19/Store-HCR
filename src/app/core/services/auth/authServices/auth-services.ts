@@ -16,7 +16,7 @@ interface User {
 
 interface LoginResponse {
   access_token: string;
-  user: User;
+  user: User
 }
 
 @Injectable({

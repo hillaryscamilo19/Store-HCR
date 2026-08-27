@@ -1,7 +1,4 @@
 import { Routes } from '@angular/router';
-import { Layout } from './layout/layout';
-import { Home } from './features/home/home';
-import { Products } from './features/products/products';
 import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
@@ -24,6 +21,8 @@ export const routes: Routes = [
       import('./features/auth/login/logincomponent/logincomponents/logincomponents')
         .then(m => m.Logincomponents)
   },
+
+
 
   {
     path: 'dashboard',
