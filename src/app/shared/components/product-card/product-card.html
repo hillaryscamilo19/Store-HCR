@@ -1,1 +1,148 @@
-<p>product-card works!</p>
+<article
+  class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+>
+  <!-- Imagen -->
+  <div class="relative aspect-square overflow-hidden bg-gray-100">
+    <img
+      [src]="producto().image"
+      [alt]="producto().name"
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+
+    <!-- Categoría -->
+    <span
+      class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 backdrop-blur"
+    >
+      {{ producto().category }}
+    </span>
+
+    <!-- Producto agotado -->
+    @if (producto().stock === 0) {
+      <span
+        class="absolute right-4 top-4 rounded-full bg-red-500 px-3 py-1 text-xs font-medium text-white"
+      >
+        Out of stock
+      </span>
+    }
+  </div>
+
+  <!-- Información -->
+  <div class="p-5">
+    <div class="mb-2 flex items-start justify-between gap-3">
+      <div>
+        <p class="text-xs uppercase tracking-wide text-gray-400">
+          {{ producto().brand }}
+        </p>
+
+        <h3 class="mt-1 text-lg font-semibold text-gray-900">
+          {{ producto().name }}
+        </h3>
+      </div>
+    </div>
+
+    <p class="line-clamp-2 text-sm leading-6 text-gray-500">
+      {{ producto().description }}
+    </p>
+
+    <!-- Precio -->
+    <div class="mt-4">
+      <span class="text-xl font-bold text-gray-900">
+        RD$ {{ producto().price | number: '1.2-2' }}
+      </span>
+    </div>
+
+    <!-- Acciones -->
+    <div class="mt-5 grid grid-cols-2 gap-3">
+      <button
+        type="button"
+        (click)="onVerProducto()"
+        class="rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:border-gray-300 hover:bg-gray-50"
+      >
+        Ver detalles
+      </button>
+
+      <button
+        type="button"
+        [disabled]="producto().stock === 0"
+        (click)="onAgregarCarrito()"
+        class="rounded-xl bg-[#65bfd6] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#55afc9] disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        Agregar
+      </button>
+    </div>
+  </div>
+</article>
+<article
+  class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+>
+  <!-- Imagen -->
+  <div class="relative aspect-square overflow-hidden bg-gray-100">
+    <img
+      [src]="producto().image"
+      [alt]="producto().name"
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+
+    <!-- Categoría -->
+    <span
+      class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 backdrop-blur"
+    >
+      {{ producto().category }}
+    </span>
+<!----->
+    <!-- Producto agotado -->
+    @if (producto().stock === 0) {
+      <span
+        class="absolute right-4 top-4 rounded-full bg-red-500 px-3 py-1 text-xs font-medium text-white"
+      >
+        Out of stock
+      </span>
+    }
+  </div>
+
+  <!-- Información -->
+  <div class="p-5">
+    <div class="mb-2 flex items-start justify-between gap-3">
+      <div>
+        <p class="text-xs uppercase tracking-wide text-gray-400">
+          {{ producto().brand }}
+        </p>
+
+        <h3 class="mt-1 text-lg font-semibold text-gray-900">
+          {{ producto().name }}
+        </h3>
+      </div>
+    </div>
+
+    <p class="line-clamp-2 text-sm leading-6 text-gray-500">
+      {{ producto().description }}
+    </p>
+
+    <!-- Precio -->
+    <div class="mt-4">
+      <span class="text-xl font-bold text-gray-900">
+        RD$ {{ producto().price | number: '1.2-2' }}
+      </span>
+    </div>
+
+    <!-- Acciones -->
+    <div class="mt-5 grid grid-cols-2 gap-3">
+      <button
+        type="button"
+        (click)="onVerProducto()"
+        class="rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:border-gray-300 hover:bg-gray-50"
+      >
+        Ver detalles
+      </button>
+
+      <button
+        type="button"
+        [disabled]="producto().stock === 0"
+        (click)="onAgregarCarrito()"
+        class="rounded-xl bg-[#65bfd6] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#55afc9] disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        Agregar
+      </button>
+    </div>
+  </div>
+</article>
